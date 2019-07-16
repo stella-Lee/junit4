@@ -191,10 +191,8 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
-                <!--
-                Updates Version#id().
-                -->
+ <!--            <plugin>
+               
                 <groupId>com.google.code.maven-replacer-plugin</groupId>
                 <artifactId>replacer</artifactId>
                 <version>1.5.3</version>
@@ -214,7 +212,7 @@
                     <token>@version@</token>
                     <value>${project.version}</value>
                 </configuration>
-            </plugin>
+            </plugin>--> 
             <plugin><!-- Using jdk 1.5.0_22, package-info.java files are compiled correctly. -->
                 <!--
                 java compiler plugin forked in extra process
@@ -470,6 +468,11 @@
         		</formats>
         		</configuration>
       		</plugin>
+      		<plugin>
+        		<groupId>org.codehaus.mojo</groupId>
+        		<artifactId>jdepend-maven-plugin</artifactId>
+        		<version>2.0</version>
+      		</plugin>
         </plugins>
     </reporting>
 
@@ -603,6 +606,7 @@
                             <source>1.6</source>
                         </configuration>
                     </plugin>
+                    
                 </plugins>
             </reporting>
         </profile>
